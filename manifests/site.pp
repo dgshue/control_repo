@@ -2,11 +2,11 @@ node default {
 
 }
 
-node 'master.puppet.vm' {
+node 'rcforeman01.co.randolph.nc.us' {
   include role::master_server
   file { '/root/README':
     ensure => file,
-    content => "Welcome to ${fqdn}, this is a ${os.family} machine.\n",
+    content => "Welcome to ${fqdn}, this is a machine.\n",
     }
 }
 
