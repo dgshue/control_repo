@@ -6,7 +6,7 @@ node 'master.puppet.vm' {
   include role::master_server
   file { '/root/README':
     ensure => file,
-    content => "Welcome to ${fqdn}, this is a ${os.family} machine.\n",
+    content => "Welcome to ${fqdn}, this is a machine.\n",
     }
 }
 
