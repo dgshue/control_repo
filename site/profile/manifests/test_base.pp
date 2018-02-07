@@ -6,8 +6,11 @@ class profile::test_base {
     scheduled_install_hour => 2,
   }
   contain 'wsus_client'
+<<<<<<< HEAD
   service { 'puppet':
       ensure => 'running',
       enable => true,
     }
+=======
+>>>>>>> f5716d4dd021f6a13e096a1aa03dd022f6565ccf
 }

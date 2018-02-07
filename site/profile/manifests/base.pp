@@ -8,5 +8,6 @@ class profile::base {
   contain 'wsus_client'
   service { 'puppet':
       ensure => 'running',
+      enable => true,
     }
 }
