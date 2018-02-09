@@ -8,8 +8,8 @@ class profile::docker {
   include 'docker'
   docker::run { 'nginx-proxy':
   image            => 'jwilder/nginx-proxy',
-  ports            => ['80', '80'],
-  #expose           => ['4666', '4777'],
+  ports            => ['80:80', '443:443'],
+  #expose           => ['80', '443'],
   #links            => ['mysql:db'],
   #net              => 'my-user-def-net',
   volumes          => ['/var/run/docker.sock:/tmp/docker.sock:ro'],
