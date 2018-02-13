@@ -3,7 +3,7 @@ class profile::base {
     include profile::prod_wsus
     if $facts['iis_version'] {
         warning('Has IIS, including base IIS config')
-        include profile::iis
+        #include profile::iis
     }
   }
   elsif $facts['os']['family'] == 'RedHat' {
