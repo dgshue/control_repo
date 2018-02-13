@@ -7,7 +7,7 @@ class profile::iis {
         file { 'clean_iis_logs':
               ensure => file,
               path   => $iislogcleanuppath,
-              source => "puppet:///modules/files/${iislogcleanup}"
+              source => "puppet:///modules/scripts/${iislogcleanup}"
         }
         scheduled_task { 'CleanIISLogs_Task':
           ensure    => present,
