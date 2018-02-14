@@ -3,7 +3,7 @@ class profile::iis {
         $iislogcleanup = 'CleanIISLogs.ps1'
         $powershellexe = 'C:/Windows/System32/WindowsPowerShell/v1.0/powershell.exe'
         $iislogcleanuppath = "C:/Scripts/${iislogcleanup}"
-
+        # Copy CleanIISLogs.ps1 to C:\Scripts
         file { 'clean_iis_logs':
               ensure => file,
               path   => $iislogcleanuppath,

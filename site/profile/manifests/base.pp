@@ -5,6 +5,10 @@ class profile::base {
         warning('Has IIS, including base IIS config')
         #include profile::iis
     }
+    # create Scripts directory
+    file { 'C:/Scripts':
+      ensure => 'directory',
+    }
   }
   elsif $facts['os']['family'] == 'RedHat' {
     warning('WSUS not needed')
