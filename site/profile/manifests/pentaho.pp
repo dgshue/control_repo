@@ -24,8 +24,22 @@ class profile::pentaho{
     ensure => 'installed',
   }
   include postgresql::server
-  package { 'xvfb':
+  package { 'xorg-x11-server-Xvfb':
     ensure => 'installed',
   }
 
+  include '::archive' # NOTE: optional for posix platform
+  archive { '/tmp/pentaho-server.zip':
+    ensure        => present,
+    extract       => true,
+    extract_path  => '/tmp',
+    source        => 'https://sourceforge.net/projects/pentaho/files/Pentaho%208.0/server/pentaho-server-ce-8.0.0.0-28.zip',
+    checksum      => 'cf6c00ff8537c421c513818d978fc404e35078d0',
+    checksum_type => 'sha1',
+    creates       => '/tmp/pentaho-server',
+    cleanup       => true,
+  }
+  file { ''/etc/environment':
+    content => inline_template('PENTAHO_JAVA_HOME=/usr/lib/jvm/java'),
+  }
 }
