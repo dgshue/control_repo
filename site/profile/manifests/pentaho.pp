@@ -32,11 +32,11 @@ class profile::pentaho{
   archive { '/tmp/pentaho-server-ce-8.0.0.0-28.zip':
     ensure        => present,
     extract       => true,
-    extract_path  => '/tmp',
+    extract_path  => '/opt',
     source        => 'https://sourceforge.net/projects/pentaho/files/Pentaho%208.0/server/pentaho-server-ce-8.0.0.0-28.zip',
     checksum      => 'cf6c00ff8537c421c513818d978fc404e35078d0',
     checksum_type => 'sha1',
-    creates       => '/tmp/pentaho-server',
+    creates       => '/opt/pentaho-server',
     cleanup       => true,
   }
   file { '/etc/environment':
