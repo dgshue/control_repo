@@ -29,7 +29,7 @@ class profile::pentaho{
   }
 
   include '::archive' # NOTE: optional for posix platform
-  archive { '/tmp/pentaho-server.zip':
+  archive { '/tmp/pentaho-server-ce-8.0.0.0-28.zip':
     ensure        => present,
     extract       => true,
     extract_path  => '/tmp',

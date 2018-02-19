@@ -16,6 +16,10 @@ class profile::base {
       ensure => 'present',
       name   => 'htop'
     }
+    package { 'unzip':
+      ensure => 'present',
+      name   => 'unzip'
+    }
   }
   elsif $facts['osfamily'] == 'Debian' {
     warning('WSUS not needed')
