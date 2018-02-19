@@ -39,7 +39,7 @@ class profile::pentaho{
     creates       => '/tmp/pentaho-server',
     cleanup       => true,
   }
-  file { ''/etc/environment':
+  file { '/etc/environment':
     content => inline_template('PENTAHO_JAVA_HOME=/usr/lib/jvm/java'),
   }
 }
