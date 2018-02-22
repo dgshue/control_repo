@@ -1,13 +1,10 @@
 class profile::base {
   if $facts['os']['family'] == 'windows' {
     include profile::prod_wsus
+    #include profile::windows_basics
     if $facts['iis_version'] {
         warning('Has IIS, including base IIS config')
         include profile::iis
-    }
-    # create Scripts directory
-    file { 'C:/Scripts':
-      ensure => 'directory',
     }
   }
   elsif $facts['os']['family'] == 'RedHat' {
